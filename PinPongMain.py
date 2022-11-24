@@ -122,12 +122,22 @@ def main():
                 jugando = False
 
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP:
+                    raqueta_1.dir_y = -5
                 if event.key == pygame.K_w:
                     raqueta_1.dir_y = -5
+                if event.key == pygame.K_DOWN:
+                    raqueta_1.dir_y = 5
                 if event.key == pygame.K_s:
                     raqueta_1.dir_y = 5
+
+
             if event.type == pygame.KEYUP:
+                if event.key == pygame.K_UP:
+                    raqueta_1.dir_y = 0
                 if event.key == pygame.K_w:
+                    raqueta_1.dir_y = 0
+                if event.key == pygame.K_DOWN:
                     raqueta_1.dir_y = 0
                 if event.key == pygame.K_s:
                     raqueta_1.dir_y = 0
