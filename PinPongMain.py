@@ -8,10 +8,16 @@ winVertical = 600  # tamaño de la ventana vertical
 fps = 60
 white = (255, 255, 255)
 black = (0, 0, 0)
+screen = pygame.display.set_mode([800, 600])
+
+done = False
+
+background = pygame.image.load("cancha.png").convert_alpha()
+
 
 class pelotaP:
-    def __init__(self, fichero_imagen):
-            self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+    def __init__(self, background):
+            self.imagen = pygame.image.load(background).convert_alpha()
             self.ancho, self.alto = self.imagen.get_size()
             self.x = winHorizontal/2-self.ancho/2
             self.y = winVertical/2-self.alto/2
@@ -110,7 +116,7 @@ def main():
         raqueta_1.golpear(pelota)
         raqueta_2.golpear_IA(pelota)
 
-        win.fill(white)
+        screen.blit(background, [0, 0])
         win.blit(pelota.imagen, (pelota.x,pelota.y))
         win.blit(raqueta_1.imagen, (raqueta_1.x,raqueta_1.y))
         win.blit(raqueta_2.imagen, (raqueta_2.x,raqueta_2.y))
