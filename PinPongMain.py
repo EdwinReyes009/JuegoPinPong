@@ -14,7 +14,6 @@ done = False
 
 background = pygame.image.load("cancha.png").convert_alpha()
 
-
 class pelotaP:
     def __init__(self, background):
             self.imagen = pygame.image.load(background).convert_alpha()
@@ -94,7 +93,11 @@ class raqueta:
 
 def main():
     pygame.init()
-    playsound('sonido.mp3') 
+
+    pygame.mixer.music.load("sonido.wav")
+    pygame.mixer.music.play(10)
+
+    playsound('loser.wav') 
     print('Reproduciendo sonido...') 
     win = pygame.display.set_mode((winHorizontal,winVertical))
     pygame.display.set_caption("Mi juego de pin pong")
