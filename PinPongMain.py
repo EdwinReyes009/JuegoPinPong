@@ -5,7 +5,7 @@ from playsound import playsound
 
 winHorizontal = 800  # tamaño de la ventana horizontal
 winVertical = 600  # tamaño de la ventana vertical
-fps = 60
+fps = 50
 white = (255, 255, 255)
 black = (0, 0, 0)
 screen = pygame.display.set_mode([800, 600])
